@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Политика конфиденциальности - Нам по пути</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: rgba(8, 115, 246, 1);
+            --primary-hover: #2563eb;
+            --secondary: #64748b;
+            --background: #ffffff;
+            --foreground: rgba(16, 41, 73, 1);
+            --muted-foreground: #64748b;
+            --border: #e2e8f0;
+            --accent: #f8fafc;
+        }
+
+        img.brand-icon {
+            width: 24px;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.7;
+            color: var(--foreground);
+            background-color: var(--background);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        /* Header */
+        header {
+            background: var(--background);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .back-btn {
+            background: var(--accent);
+            color: var(--muted-foreground);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            font-size: 0.875rem;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .back-btn:hover {
+            background: var(--border);
+            color: var(--foreground);
+        }
+
+        /* Main Content */
+        main {
+            padding: 2rem 0 4rem;
+        }
+
+        .content {
+            background: white;
+            border-radius: 1rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            padding: 3rem;
+            margin-top: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--foreground);
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            width: 4rem;
+            height: 3px;
+            background: var(--primary);
+            display: block;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--foreground);
+            margin: 2.5rem 0 1rem;
+            position: relative;
+            padding-left: 1rem;
+        }
+
+        h2::before {
+            content: '';
+            width: 4px;
+            height: 100%;
+            background: var(--primary);
+            position: absolute;
+            left: 0;
+            top: 0;
+            border-radius: 2px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            color: var(--foreground);
+            text-align: justify;
+        }
+
+        ul {
+            margin: 1rem 0 1.5rem 1.5rem;
+            color: var(--foreground);
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+            position: relative;
+        }
+
+        li::marker {
+            color: var(--primary);
+        }
+
+        /* Special styling for first paragraph */
+        .intro {
+            font-size: 1.125rem;
+            color: var(--muted-foreground);
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 1.5rem;
+            background: var(--accent);
+            border-radius: 0.75rem;
+            border-left: 4px solid var(--primary);
+        }
+
+        /* Date highlight */
+        .date-updated {
+            color: var(--muted-foreground);
+            padding: 0.75rem 1.5rem;
+            border-radius: 2rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 2rem;
+            font-size: 0.875rem;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--foreground);
+            color: white;
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+
+        .footer-links a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: white;
+        }
+
+        .footer-links a.email:hover {
+            color: var(--primary);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .content {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <div class="container">
+        <div class="header-content">
+            <div class="logo">
+                <img class="brand-icon" src="./img/logo.svg" alt="logo"/>
+                Заправки&nbsp;24
+            </div>
+            <a href="./index.html" class="back-btn">
+                ← На главную
+            </a>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container">
+        <div class="content">
+            <h1>Политика конфиденциальности</h1>
+
+            <div class="intro">
+                Настоящая Политика конфиденциальности действует в отношении мобильного приложения «Заправки&nbsp;24» и определяет порядок обработки персональных данных пользователей.
+            </div>
+
+            <h2>1. Общие положения</h2>
+            <p>Настоящая Политика конфиденциальности (далее — «Политика») действует в отношении мобильного приложения «Заправки&nbsp;24» (далее — «Приложение») и определяет порядок обработки персональных данных пользователей.</p>
+            <p>Оператором персональных данных является ООО «Заправки&nbsp;24» (далее — «Оператор», «Компания»).</p>
+
+            <h2>2. Собираемые данные</h2>
+            <p>В рамках использования Приложения могут собираться следующие персональные данные:</p>
+            <ul>
+                <li>Номер мобильного телефона</li>
+                <li>Адрес электронной почты</li>
+                <li>Фамилия, имя, отчество</li>
+                <li>Данные об автомобиле (марка, модель, год выпуска, регистрационный номер)</li>
+                <li>Геолокационные данные</li>
+                <li>История транзакций и накопления баллов</li>
+                <li>Данные об использовании приложения</li>
+                <li>Техническая информация об устройстве</li>
+            </ul>
+
+            <h2>3. Цели обработки данных</h2>
+            <p>Персональные данные обрабатываются в следующих целях:</p>
+            <ul>
+                <li>Предоставление услуг программы лояльности</li>
+                <li>Выпуск и обслуживание виртуальной карты лояльности</li>
+                <li>Начисление и списание бонусных баллов</li>
+                <li>Персонализация предложений и акций</li>
+                <li>Уведомление о специальных предложениях партнеров</li>
+                <li>Геолокационное определение ближайших партнеров</li>
+                <li>Техническая поддержка пользователей</li>
+                <li>Анализ использования приложения и улучшение сервиса</li>
+                <li>Исполнение требований законодательства</li>
+            </ul>
+
+            <h2>4. Правовые основания</h2>
+            <p>Обработка персональных данных осуществляется в соответствии с Федеральным законом «О персональных данных» № 152-ФЗ, на основании согласия субъекта персональных данных, которое предоставляется путем совершения конклюдентных действий — использования Приложения.</p>
+
+            <h2>5. Передача данных третьим лицам</h2>
+            <p>Персональные данные могут передаваться партнерам программы лояльности (заправочные станции, автосервисы, автомагазины и др.) исключительно в объеме, необходимом для предоставления услуг и начисления бонусов.</p>
+            <p>Передача данных осуществляется только при наличии соответствующих соглашений о конфиденциальности с партнерами.</p>
+
+            <h2>6. Защита данных</h2>
+            <p>Компания принимает необходимые технические и организационные меры для защиты персональных данных от неправомерного доступа, изменения, блокирования, копирования, распространения и иных неправомерных действий.</p>
+
+            <h2>7. Права субъекта персональных данных</h2>
+            <p>Пользователь имеет право:</p>
+            <ul>
+                <li>Получать информацию об обработке своих персональных данных</li>
+                <li>Требовать уточнения, блокирования или уничтожения данных</li>
+                <li>Отзывать согласие на обработку персональных данных</li>
+                <li>Обращаться в уполномоченный орган по защите прав субъектов персональных данных</li>
+            </ul>
+
+            <h2>8. Срок обработки данных</h2>
+            <p>Персональные данные обрабатываются в течение срока использования Приложения и в течение 3 лет после прекращения использования, если иное не предусмотрено законодательством.</p>
+
+            <h2>9. Контактная информация</h2>
+            <p>По вопросам обработки персональных данных можно обращаться по адресу электронной почты.</p>
+
+            <h2>10. Изменения в Политике</h2>
+            <p>Компания оставляет за собой право вносить изменения в настоящую Политику. Актуальная версия размещается на данной странице.</p>
+
+            <div class="date-updated">
+                Дата последнего обновления: 2 июня 2025 г.
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Add reading progress indicator
+    function updateReadingProgress() {
+        const article = document.querySelector('.content');
+        const totalHeight = article.offsetHeight;
+        const windowHeight = window.innerHeight;
+        const scrollTop = window.scrollY;
+        const docHeight = document.body.offsetHeight;
+
+        const progress = (scrollTop / (docHeight - windowHeight)) * 100;
+
+        // Create progress bar if it doesn't exist
+        if (!document.querySelector('.reading-progress')) {
+            const progressBar = document.createElement('div');
+            progressBar.className = 'reading-progress';
+            progressBar.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: ${progress}%;
+                    height: 3px;
+                    background: var(--primary);
+                    z-index: 9999;
+                    transition: width 0.1s ease-out;
+                `;
+            document.body.appendChild(progressBar);
+        } else {
+            document.querySelector('.reading-progress').style.width = progress + '%';
+        }
+    }
+
+    // Update progress on scroll
+    window.addEventListener('scroll', updateReadingProgress);
+
+    // Header background change on scroll
+    window.addEventListener('scroll', () => {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(255, 255, 255, 0.95)';
+            header.style.backdropFilter = 'blur(10px)';
+        } else {
+            header.style.background = 'var(--background)';
+            header.style.backdropFilter = 'none';
+        }
+    });
+</script>
+</body>
+</html>
