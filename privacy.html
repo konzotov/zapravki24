@@ -173,28 +173,6 @@
             font-size: 0.875rem;
         }
 
-        /* Footer */
-        footer {
-            background: var(--foreground);
-            color: white;
-            padding: 3rem 0 1rem;
-            margin-top: 4rem;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-links a:hover {
-            color: white;
-        }
-
-        .footer-links a.email:hover {
-            color: var(--primary);
-        }
-
         /* Responsive */
         @media (max-width: 768px) {
             h1 {
@@ -322,6 +300,7 @@
     // Add reading progress indicator
     function updateReadingProgress() {
         const article = document.querySelector('.content');
+        // noinspection JSUnusedLocalSymbols
         const totalHeight = article.offsetHeight;
         const windowHeight = window.innerHeight;
         const scrollTop = window.scrollY;
