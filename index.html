@@ -6,6 +6,20 @@
     <title>Заправки&nbsp;24 - Управление топливными картами</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
+        .base-color {
+            color: var(--primary);
+        }
+        .base-color-dark {
+            color: var(--secondary);
+        }
+        .base-color-gray {
+            color: #333;
+        }
+
+        img.brand-icon {
+            width: 24px;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -43,7 +57,6 @@
         .logo {
             font-size: 1.5rem;
             font-weight: bold;
-            color: rgba(8, 115, 246, 1);
         }
 
         .nav-links {
@@ -59,19 +72,32 @@
         }
 
         .nav-links a:hover {
-            color: rgba(8, 115, 246, 1);
+            color: var(--primary);
+        }
+
+        .scale {
+            cursor: pointer;
+            transition: 1s; /* Время эффекта */
+        }
+        .scale:hover {
+            transform: scale(1.1); /* Увеличиваем масштаб */
         }
 
         /* Hero Section */
         .hero {
             height: 100vh;
-            background: linear-gradient(180deg, rgba(53, 81, 116, 0.8) 0%, rgba(16, 41, 73, 0.8) 100%);
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
             overflow: hidden;
+            width: 100%;
+            background: linear-gradient(
+                    to bottom,
+                    rgba(248, 249, 250, 0.7) 0%,
+                    rgba(248, 249, 250, 1) 100%
+            ), url('./img/background.jpg') center/cover;
         }
 
         .hero::before {
@@ -81,7 +107,6 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500"><path d="M0,300 Q250,200 500,300 T1000,300 L1000,500 L0,500 Z" fill="rgba(255,255,255,0.1)"/></svg>') no-repeat center bottom;
             background-size: cover;
         }
 
@@ -146,7 +171,7 @@
         .phone-screen {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, rgba(8, 115, 246, 1), rgba(38, 135, 246, 1));
+            background: url('./img/phone.svg') center/cover;
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -351,10 +376,12 @@
             opacity: 0.9;
         }
 
+        .contacts {
+            padding: 30px 0;
+        }
+
         /* Footer */
         footer {
-            background: #333;
-            color: white;
             padding: 2rem 0;
             text-align: center;
         }
@@ -405,13 +432,123 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* CSS переменные для цветов (аналог Tailwind CSS custom properties) */
+        :root {
+            --primary: rgba(8, 115, 246, 1);
+            --secondary: rgba(16, 41, 73, 1);
+            --primary-foreground: rgba(248, 249, 250, 1);
+            --foreground: #333;
+            --muted-foreground: #555;
+        }
+
+        /* Основной flex контейнер */
+        .main-flex {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        /* Левый блок с логотипом и текстом */
+        .left-section {
+            text-align: center;
+        }
+
+        /* Контейнер логотипа */
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Иконка логотипа */
+        .logo-wrapper {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .logo-text {
+            color: var(--primary-foreground);
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+
+        .brand-icon {
+            /* Стили для логотипа если нужны */
+        }
+
+        /* Название бренда */
+        .brand-name {
+            font-weight: bold;
+            font-size: 1.25rem;
+            color: var(--foreground);
+        }
+
+        /* Описание */
+        .description {
+            color: var(--muted-foreground);
+            max-width: 28rem;
+        }
+
+        /* Правый блок с ссылками */
+        .right-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        /* Ссылки */
+        .link {
+            color: var(--muted-foreground);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .link:hover {
+            color: var(--foreground);
+        }
+
+        .link.email:hover {
+            color: var(--primary);
+        }
+
+        /* Медиа запросы для адаптивности */
+        @media (min-width: 768px) {
+            .main-flex {
+                flex-direction: row;
+            }
+
+            .left-section {
+                text-align: left;
+            }
+
+            .logo-container {
+                justify-content: flex-start;
+            }
+
+            .right-section {
+                flex-direction: row;
+            }
+        }
     </style>
 </head>
 <body>
 <!-- Header -->
 <header>
     <nav>
-        <div class="logo">Заправки&nbsp;24</div>
+        <div class="logo">
+            <img class="brand-icon" src="./img/logo.svg" alt="logo"/>
+            Заправки&nbsp;24
+        </div>
         <ul class="nav-links">
             <li><a href="#home">Главная</a></li>
             <li><a href="#features">Возможности</a></li>
@@ -425,16 +562,14 @@
 <section class="hero" id="home">
     <div class="hero-layout">
         <div class="hero-content">
-            <h1>Ваша карта лояльности — всегда под рукой</h1>
-            <p>Копите бонусы и экономьте на каждой поездке с приложением «Заправки&nbsp;24».</p>
-            <a href="#" class="cta-button">Скачать приложение</a>
-        </div>
+            <h1><span class="base-color-dark">Ваша карта лояльности —</span> <span class="base-color">всегда под рукой</span></h1>
+            <p class="base-color-gray">Копите бонусы и экономьте на каждой поездке с приложением «Заправки&nbsp;24».</p>
+            <a href="https://apps.apple.com/ru/app/id6749857877">
+                <img src="./img/store.svg" alt="" class="scale">
+            </a>
+            </div>
         <div class="phone-mockup">
             <div class="phone-screen">
-                <div>
-                    <i class="fas fa-credit-card" style="font-size: 2rem; margin-bottom: 1rem;"></i>
-                    <br>Заправки&nbsp;24
-                </div>
             </div>
         </div>
     </div>
@@ -559,11 +694,41 @@
 </section>
 
 <!-- Final CTA -->
-<section class="final-cta" id="contact">
+<section class="final-cta">
     <div class="container">
         <h2>Готовы экономить на каждой поездке?</h2>
         <p>Присоединяйтесь к программе лояльности «Заправки&nbsp;24» уже сегодня и начните получать выгоду от каждой заправки, мойки и посещения автосервиса.</p>
-        <a href="#" class="cta-button">Скачать приложение</a>
+        <a href="https://apps.apple.com/ru/app/id6749857877">
+            <img src="./img/store.svg" alt="" class="scale">
+        </a>
+    </div>
+</section>
+
+<section class="contacts">
+    <div class="container" id="contact">
+        <div class="main-flex">
+            <div class="left-section">
+                <div class="logo-container">
+                    <div class="logo-wrapper">
+                        <span class="logo-text">
+                            <img class="brand-icon" src="./img/logo.svg" alt="logo">
+                        </span>
+                    </div>
+                    <span class="brand-name">Нам по пути</span>
+                </div>
+                <p class="description">
+                    Программа лояльности для автомобилистов. Копите бонусы и экономьте на каждой поездке.
+                </p>
+            </div>
+            <div class="right-section">
+                <a class="link" href="./privacy.html">
+                    Политика конфиденциальности
+                </a>
+                <a href="mailto:konzotov@mail.ru" class="link email">
+                    konzotov@mail.ru
+                </a>
+            </div>
+        </div>
     </div>
 </section>
 
